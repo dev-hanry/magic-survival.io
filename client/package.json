@@ -1,0 +1,19 @@
+{
+  "name": "arena-client",
+  "version": "1.0.0",
+  "description": "Phaser 3 arena game client",
+  "scripts": {
+    "dev":     "vite",
+    "build":   "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "colyseus.js": "^0.15.20",
+    "phaser":      "^3.60.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript":  "^5.3.3",
+    "vite":        "^5.0.12"
+  }
+}

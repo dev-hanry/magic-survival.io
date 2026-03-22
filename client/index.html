@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arena — Multiplayer Survival</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #050510;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* Phaser canvas */
+    canvas {
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    /* Loading overlay — hidden once Phaser boots */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: #050510;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #00ff88;
+      font-family: 'Courier New', monospace;
+      font-size: 1.2rem;
+      z-index: 999;
+      gap: 16px;
+      transition: opacity 0.5s;
+    }
+
+    #loading .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px #00ff88;
+    }
+
+    #loading .dots::after {
+      content: '';
+      animation: dots 1.2s steps(4, end) infinite;
+    }
+
+    @keyframes dots {
+      0%   { content: ''; }
+      25%  { content: '.'; }
+      50%  { content: '..'; }
+      75%  { content: '...'; }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="title">ARENA</div>
+    <div>Connecting to server<span class="dots"></span></div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
